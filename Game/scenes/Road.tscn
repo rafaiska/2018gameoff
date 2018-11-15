@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/ObstacleRock.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/GenSrc.gd" type="Script" id=2]
+
+[node name="Road" type="Node2D" index="0"]
+
+position = Vector2( 504.188, 277.317 )
+scale = Vector2( 1.17417, 1.18278 )
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="0"]
+
+polygon = PoolVector2Array( -200, 270, 0, -70, 200, 270 )
+uv = PoolVector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+[node name="ObstacleGen" type="Node2D" parent="." index="1"]
+
+[node name="ObstacleRock" parent="ObstacleGen" index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 0, -70 )
+scale = Vector2( 1, 1 )
+_sections_unfolded = [ "Pause", "Transform" ]
+
+[node name="GenSrc" type="Position2D" parent="ObstacleGen" index="1"]
+
+position = Vector2( 0, -70 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Timer" type="Timer" parent="ObstacleGen" index="2"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="ObstacleGen/Timer" to="ObstacleGen/GenSrc" method="_on_Timer_timeout"]
+
+

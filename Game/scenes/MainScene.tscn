@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="MainNode" type="Node2D"]
+
+position = Vector2( 512.499, 299.478 )
+scale = Vector2( 15.9422, 9.35453 )
+
+[node name="Background" type="Sprite" parent="." index="0"]
+
+position = Vector2( -32.082, -31.9624 )
+scale = Vector2( 64.2905, 63.9624 )
+
+
