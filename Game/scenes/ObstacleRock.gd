@@ -1,18 +1,23 @@
 extends Node2D
 
 var angle
-const intensity = 300
-onready var rigid_body = get_node("RigidBody2D")
+onready var static_body = get_node("StaticBody2D")
 
 func _ready():
 	randomize()
 	angle = rand_range(PI/2.0 -(PI/6.0), PI/2.0 + PI/6.0)
-	rigid_body.apply_impulse(Vector2(0,0), Vector2(intensity*cos(angle), intensity*sin(angle)))
+	set_velocity(1000)
+
+func set_velocity(vel):
+	static_body.constant_linear_velocity = Vector2(vel * cos(angle), vel * sin(angle))
+
+func _update_scale():
+	var scale_mul = self.static_body.position.y
+	scale_mul /= 80.0
+	self.static_body.scale.x *= scale_mul
+	self.static_body.scale.y *= scale_mul
 
 func _process(delta):
-	if self.rigid_body.position.y >= 340:
+	if self.static_body.position.y >= 340:
 		queue_free()
-	var scale_mul = self.rigid_body.position.y + 70.0
-	scale_mul /= 100.0
-	self.rigid_body.scale.x *= scale_mul
-	self.rigid_body.scale.y *= scale_mul
+	#_update_scale()

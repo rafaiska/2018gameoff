@@ -1,11 +1,19 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/Road.tscn" type="PackedScene" id=1]
 
 [node name="MainNode" type="Node2D"]
 
-position = Vector2( 512.499, 299.478 )
+position = Vector2( 510.829, 301.148 )
 scale = Vector2( 15.9422, 9.35453 )
 
-[node name="Background" type="Sprite" parent="." index="0"]
+[node name="Road" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( -0.466646, 4.9942 )
+scale = Vector2( 0.1, 0.1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Background" type="Sprite" parent="." index="1"]
 
 position = Vector2( -32.082, -31.9624 )
 scale = Vector2( 64.2905, 63.9624 )

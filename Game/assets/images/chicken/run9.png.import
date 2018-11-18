@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/run1.png-5c96535d5e9128e6ea1d07f8da5d970b.stex"
+path="res://.import/run9.png-ac2d7c51a6825b96d2854ba772f6bdd5.stex"
 
 [deps]
 
-source_file="res://assets/images/chicken/run1.png"
-dest_files=[ "res://.import/run1.png-5c96535d5e9128e6ea1d07f8da5d970b.stex" ]
+source_file="res://assets/images/chicken/run9.png"
+dest_files=[ "res://.import/run9.png-ac2d7c51a6825b96d2854ba772f6bdd5.stex" ]
 
 [params]
 
