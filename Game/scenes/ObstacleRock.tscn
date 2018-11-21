@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="ObstacleRock" type="Node2D" index="0"]
+[node name="ObstacleRock" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -18,15 +18,15 @@ _sections_unfolded = [ "Transform" ]
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
-mode = 1
+mode = 0
 mass = 1.0
 friction = 1.0
 bounce = 0.0
-gravity_scale = 1.0
+gravity_scale = 0.0
 custom_integrator = false
 continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
+contacts_reported = 1
+contact_monitor = true
 sleeping = false
 can_sleep = true
 linear_velocity = Vector2( 0, 0 )
@@ -40,8 +40,10 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" index="1"]
 
-position = Vector2( -1.33888, 6.21563 )
+position = Vector2( 0.611819, 0.36351 )
 scale = Vector2( 1.47813, 1.47813 )
 shape = SubResource( 1 )
+
+[connection signal="body_entered" from="RigidBody2D" to="." method="_on_RigidBody2D_body_entered"]
 
 

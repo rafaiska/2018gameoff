@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Road.gd" type="Script" id=1]
-[ext_resource path="res://scenes/ObstacleRock.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/GenSrc.gd" type="Script" id=3]
-[ext_resource path="res://scenes/Chicken.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/images/bg.png" type="Texture" id=2]
+[ext_resource path="res://scenes/ObstacleRock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/GenSrc.gd" type="Script" id=4]
+[ext_resource path="res://scenes/Chicken.tscn" type="PackedScene" id=5]
 
 [sub_resource type="LineShape2D" id=1]
 
@@ -17,17 +18,24 @@ custom_solver_bias = 0.0
 normal = Vector2( -0.862937, 0.505311 )
 d = 0.0
 
-[node name="Road" type="Node2D" index="0"]
+[node name="Road" type="Node2D"]
 
 position = Vector2( 504.188, 277.317 )
 scale = Vector2( 1.17417, 1.18278 )
 script = ExtResource( 1 )
 
-[node name="Polygon2D" type="Polygon2D" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
+position = Vector2( -1.50009, 95.554 )
+scale = Vector2( 0.820996, 1 )
+texture = ExtResource( 2 )
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="1"]
+
+visible = false
 polygon = PoolVector2Array( -200, 270, 0, -70, 200, 270 )
 uv = PoolVector2Array(  )
-color = Color( 1, 1, 1, 1 )
+color = Color( 0.863281, 0.732635, 0.286636, 1 )
 vertex_colors = PoolColorArray(  )
 offset = Vector2( 0, 0 )
 antialiased = false
@@ -37,10 +45,11 @@ texture_scale = Vector2( 1, 1 )
 texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
+_sections_unfolded = [ "Visibility" ]
 
-[node name="ObstacleGen" type="Node2D" parent="." index="1"]
+[node name="ObstacleGen" type="Node2D" parent="." index="2"]
 
-[node name="ObstacleRock" parent="ObstacleGen" index="0" instance=ExtResource( 2 )]
+[node name="ObstacleRock" parent="ObstacleGen" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 0, -70 )
 _sections_unfolded = [ "Pause", "Transform" ]
@@ -48,23 +57,17 @@ _sections_unfolded = [ "Pause", "Transform" ]
 [node name="GenSrc" type="Position2D" parent="ObstacleGen" index="1"]
 
 position = Vector2( 0, -70 )
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Timer" type="Timer" parent="ObstacleGen" index="2"]
-
-process_mode = 1
-wait_time = 0.5
-one_shot = false
-autostart = true
-
-[node name="Chicken" parent="." index="2" instance=ExtResource( 4 )]
+[node name="Chicken" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 1.88742, 230.454 )
 scale = Vector2( 2, 2 )
-_sections_unfolded = [ "Transform" ]
+z_index = 1
+_sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="3"]
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="4"]
 
 input_pickable = false
 collision_layer = 1
@@ -85,7 +88,5 @@ shape = SubResource( 1 )
 
 position = Vector2( 149.1, 184.55 )
 shape = SubResource( 2 )
-
-[connection signal="timeout" from="ObstacleGen/Timer" to="ObstacleGen/GenSrc" method="_on_Timer_timeout"]
 
 

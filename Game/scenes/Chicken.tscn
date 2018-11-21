@@ -40,7 +40,7 @@ texture = ExtResource( 2 )
 
 frames = SubResource( 1 )
 animation = "run"
-frame = 2
+frame = 8
 playing = true
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="." index="2"]
