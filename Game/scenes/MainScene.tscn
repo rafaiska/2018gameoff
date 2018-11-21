@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Road.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/ProgressBar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/PeckingTimeWarn.tscn" type="PackedScene" id=4]
 
-[node name="MainNode" type="Node2D"]
+[node name="MainNode" type="Node2D" index="0"]
 
 position = Vector2( 510.829, 301.148 )
 scale = Vector2( 15.9422, 9.35453 )
@@ -24,8 +25,10 @@ scale = Vector2( 64.2905, 63.9624 )
 
 [node name="ProgressBar" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( -17.1303, -27.6746 )
-scale = Vector2( 0.332899, 0.332899 )
+position = Vector2( -27.7594, -24.6099 )
+scale = Vector2( 0.272572, 0.272572 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="PeckingTimeWarn" parent="." index="3" instance=ExtResource( 4 )]
 
 

@@ -40,17 +40,17 @@ texture = ExtResource( 2 )
 
 frames = SubResource( 1 )
 animation = "run"
-frame = 8
+frame = 7
 playing = true
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="." index="2"]
+[node name="ChickenBody" type="KinematicBody2D" parent="." index="2"]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChickenBody" index="0"]
 
 position = Vector2( -2.08744, 8.44127 )
 scale = Vector2( 1.50899, 1.02488 )

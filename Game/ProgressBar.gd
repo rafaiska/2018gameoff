@@ -9,7 +9,11 @@ func _ready():
 	bar.color.b8 = 0
 
 func _process(delta):
-	farmer.position.x = (main_scene.farmer_position / main_scene.goal_position) * 100
-	chicken.position.x = (main_scene.chicken_position / main_scene.goal_position) * 100
-	bar.color.r8 = int(main_scene.difficulty * 32)
-	bar.color.g8 = 255 - int(main_scene.difficulty * 32)
+	farmer.position.x = (main_scene.farmer_position / main_scene.goal_position) * 200
+	chicken.position.x = (main_scene.chicken_position / main_scene.goal_position) * 200
+	if main_scene.difficulty <= 2.5:
+		bar.color.r8 = int(main_scene.difficulty * 255.0 / 2.5)
+		bar.color.g8 = 255
+	else:
+		bar.color.r8 = 255
+		bar.color.g8 = 255 - int(main_scene.difficulty * 255 / 4.0)

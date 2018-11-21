@@ -15,7 +15,7 @@ func _process(delta):
 	var speed = main_scene.chicken_speed
 	var difficulty = main_scene.difficulty
 	time_since_last_spawn += delta
-	if speed > 0.0 and time_since_last_spawn > 350.0 / (speed * difficulty):
+	if not main_scene.is_pecking_time and speed > 0.0 and time_since_last_spawn > 170.0 / (speed * difficulty):
 		gen_src.spawn()
 		time_since_last_spawn = 0.0
 	
