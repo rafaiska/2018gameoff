@@ -16,4 +16,4 @@ func _process(delta):
 		bar.color.g8 = 255
 	else:
 		bar.color.r8 = 255
-		bar.color.g8 = 255 - int(main_scene.difficulty * 255 / 4.0)
+		bar.color.g8 = 255 - int((main_scene.difficulty - 2.5) * 255 / 1.5)

@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/ProgressBar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/PeckingTimeWarn.tscn" type="PackedScene" id=4]
 
-[node name="MainNode" type="Node2D" index="0"]
+[node name="MainNode" type="Node2D"]
 
 position = Vector2( 510.829, 301.148 )
 scale = Vector2( 15.9422, 9.35453 )

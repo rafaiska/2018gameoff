@@ -1,13 +1,11 @@
 extends Node2D
 
-var angle
+var angle = 0.0
 var speed = 0.0
 onready var main_scene = get_tree().current_scene
 onready var rigid_body = get_node("RigidBody2D")
 
 func _ready():
-	randomize()
-	angle = rand_range(PI/2.0 -(PI/6.0), PI/2.0 + PI/6.0)
 	_update_scale()
 
 func _update_velocity(y):
@@ -15,8 +13,10 @@ func _update_velocity(y):
 	rigid_body.set_axis_velocity(Vector2(speed * y_rate * cos(angle), speed * y_rate * sin(angle)))
 
 func _update_scale():
-	var scale_mul = self.rigid_body.position.y
+	var scale_mul = self.rigid_body.position.y - 50
 	scale_mul /= 80.0
+	if scale_mul < 0.0:
+		scale_mul = 0.0
 	self.rigid_body.scale.x *= scale_mul
 	self.rigid_body.scale.y *= scale_mul
 

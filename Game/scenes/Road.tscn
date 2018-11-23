@@ -1,22 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/Road.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/bg.png" type="Texture" id=2]
-[ext_resource path="res://scenes/ObstacleRock.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/GenSrc.gd" type="Script" id=4]
-[ext_resource path="res://scenes/Chicken.tscn" type="PackedScene" id=5]
-
-[sub_resource type="LineShape2D" id=1]
-
-custom_solver_bias = 0.0
-normal = Vector2( 0.85912, 0.511774 )
-d = 48.9182
-
-[sub_resource type="LineShape2D" id=2]
-
-custom_solver_bias = 0.0
-normal = Vector2( -0.862937, 0.505311 )
-d = 0.0
+[ext_resource path="res://scenes/GenSrc.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Chicken.tscn" type="PackedScene" id=4]
 
 [node name="Road" type="Node2D"]
 
@@ -30,63 +17,29 @@ position = Vector2( -1.50009, 95.554 )
 scale = Vector2( 0.820996, 1 )
 texture = ExtResource( 2 )
 
-[node name="Polygon2D" type="Polygon2D" parent="." index="1"]
+[node name="ObstacleGen" type="Node2D" parent="." index="1"]
 
-visible = false
-polygon = PoolVector2Array( -200, 270, 0, -70, 200, 270 )
-uv = PoolVector2Array(  )
-color = Color( 0.863281, 0.732635, 0.286636, 1 )
-vertex_colors = PoolColorArray(  )
-offset = Vector2( 0, 0 )
-antialiased = false
-texture = null
-texture_offset = Vector2( 0, 0 )
-texture_scale = Vector2( 1, 1 )
-texture_rotation_degrees = 0.0
-invert_enable = false
-invert_border = 100.0
-_sections_unfolded = [ "Visibility" ]
+[node name="GenSrc" type="Position2D" parent="ObstacleGen" index="0"]
 
-[node name="ObstacleGen" type="Node2D" parent="." index="2"]
-
-[node name="ObstacleRock" parent="ObstacleGen" index="0" instance=ExtResource( 3 )]
-
-position = Vector2( 0, -70 )
-_sections_unfolded = [ "Pause", "Transform" ]
-
-[node name="GenSrc" type="Position2D" parent="ObstacleGen" index="1"]
-
-position = Vector2( 0, -70 )
-script = ExtResource( 4 )
+position = Vector2( -1, -105.282 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Chicken" parent="." index="3" instance=ExtResource( 5 )]
+[node name="Chicken" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 1.88742, 230.454 )
 scale = Vector2( 2, 2 )
 z_index = 1
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="4"]
+[node name="RoadLLimit" type="Position2D" parent="." index="3"]
 
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Pickable" ]
+position = Vector2( -166.221, 271.909 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="Left" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+[node name="RoadRLimit" type="Position2D" parent="." index="4"]
 
-position = Vector2( -190.732, 159.127 )
-scale = Vector2( 0.990978, 0.992914 )
-shape = SubResource( 1 )
-
-[node name="Right" type="CollisionShape2D" parent="StaticBody2D" index="1"]
-
-position = Vector2( 149.1, 184.55 )
-shape = SubResource( 2 )
+position = Vector2( 164.026, 270.972 )
+_sections_unfolded = [ "Transform" ]
 
 

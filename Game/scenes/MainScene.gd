@@ -1,9 +1,9 @@
 extends Node2D
 
-const farmer_speed = 90.0  # How much he wants you for dinner
+const farmer_speed = 160.0  # How much he wants you for dinner
 var chicken_speed = 0.0  # Your desire to live
 var farmer_position = 0.0
-var chicken_position = 300.0  # > 0 for a head start
+var chicken_position = 800.0  # > 0 for a head start
 var boosting = false
 var difficulty = 1.0
 
@@ -19,12 +19,19 @@ const regular_max_speed = 150.0
 const boost_max_speed = 300.0
 
 # Goal
-const goal_position = 10000.0
+const goal_position = 20000.0
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
 	pass
+
+func _reset():
+	chicken_speed = 0.0  # Your desire to live
+	farmer_position = 0.0
+	chicken_position = 800.0  # > 0 for a head start
+	boosting = false
+	difficulty = 1.0
+	is_pecking_time = false
+	pecking_time_check = {1: false, 2: false, 3:false, 4:false}
 
 func accelerate(accel_rate, delta):
 	chicken_speed += accel_rate * delta
@@ -55,7 +62,17 @@ func _check_pecking_time():
 		_start_pecking_time()
 		pecking_time_check[4] = true
 
+func _game_over():
+	get_tree().change_scene("res://scenes/GameOver.tscn")
+
+func _victory():
+	get_tree().change_scene("res://scenes/Victory.tscn")
+
 func _process(delta):
+	if farmer_position >= chicken_position:
+		_game_over()
+	elif chicken_position >= goal_position:
+		_victory()
 	_check_pecking_time()
 	if boosting and chicken_speed < boost_max_speed:
 		accelerate(boost_acceleration, delta)

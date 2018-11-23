@@ -4,6 +4,8 @@ var speed = 0
 
 onready var main_scene = get_tree().current_scene
 onready var sprite = get_node("AnimatedSprite")
+var chicken_limit_l
+var chicken_limit_r
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -12,9 +14,13 @@ func _ready():
 
 func move_left():
 	self.position.x -= int(speed / 20.0)
+	if self.position.x <= chicken_limit_l:
+		self.position.x = chicken_limit_l
 
 func move_right():
 	self.position.x += int(speed / 20.0)
+	if self.position.x >= chicken_limit_r:
+		self.position.x = chicken_limit_r
 
 func _update_animation_speed():
 	sprite.frames.set_animation_speed('run', int(speed / 10.0))

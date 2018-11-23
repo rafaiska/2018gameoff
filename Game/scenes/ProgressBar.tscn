@@ -10,7 +10,7 @@ script = ExtResource( 1 )
 
 [node name="Bar" type="Polygon2D" parent="." index="0"]
 
-polygon = PoolVector2Array( 0, 0, 200, 0, 200, 3, 0, 3 )
+polygon = PoolVector2Array( 0, 0, 201, 0, 201, 3, 0, 3 )
 uv = PoolVector2Array(  )
 color = Color( 1, 1, 1, 1 )
 vertex_colors = PoolColorArray(  )
@@ -47,7 +47,7 @@ invert_border = 100.0
 
 [node name="Chicken" type="Sprite" parent="." index="2"]
 
-position = Vector2( 199, -16 )
+position = Vector2( 200, -16 )
 texture = ExtResource( 3 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]

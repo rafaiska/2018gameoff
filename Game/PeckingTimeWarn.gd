@@ -15,7 +15,7 @@ const key_map = {
 var chosen_key = 'A'
 
 func _ready():
-	pass
+	set_process_input(true)
 
 func start():
 	randomize()
@@ -39,4 +39,10 @@ func _process(delta):
 			key_warn.visible = true
 			press_warn.visible = true
 		elif elapsed_time > time_to_peck:
+			end()
+
+func _input(event):
+	if elapsed_time != null and time_to_warn < elapsed_time and elapsed_time <= time_to_peck + time_to_warn:
+		if event is InputEventKey and event.scancode == key_map[chosen_key]:
+			main_scene.boost()
 			end()
