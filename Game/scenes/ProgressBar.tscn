@@ -23,15 +23,41 @@ texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
 
-[node name="Farmer" type="Sprite" parent="." index="1"]
+[node name="Farmer" type="Node2D" parent="." index="1"]
 
-position = Vector2( -0.307777, -16 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="FarmerMarker" type="Polygon2D" parent="Farmer" index="0"]
+
+position = Vector2( -2.98812, -6.5147 )
+polygon = PoolVector2Array( 0, 0, 6, 0, 3, 6 )
+uv = PoolVector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+[node name="FarmerSprite" type="Sprite" parent="Farmer" index="1"]
+
+position = Vector2( 1.06975, -16.8779 )
+scale = Vector2( 0.0567875, 0.0567874 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Polygon2D" type="Polygon2D" parent="Farmer" index="0"]
+[node name="Chicken" type="Node2D" parent="." index="2"]
 
-position = Vector2( -2.68034, 9.4853 )
+position = Vector2( 200, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ChickenMarker" type="Polygon2D" parent="Chicken" index="0"]
+
+position = Vector2( -1.97101, -6.53493 )
 polygon = PoolVector2Array( 0, 0, 6, 0, 3, 6 )
 uv = PoolVector2Array(  )
 color = Color( 1, 1, 1, 1 )
@@ -45,27 +71,11 @@ texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
 
-[node name="Chicken" type="Sprite" parent="." index="2"]
+[node name="ChickenSprite" type="Sprite" parent="Chicken" index="1"]
 
-position = Vector2( 200, -16 )
+position = Vector2( 2.02576, -14.4919 )
+scale = Vector2( 0.0376352, 0.0376352 )
 texture = ExtResource( 3 )
-flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="Polygon2D2" type="Polygon2D" parent="Chicken" index="0"]
-
-position = Vector2( -1.97101, 9.46507 )
-polygon = PoolVector2Array( 0, 0, 6, 0, 3, 6 )
-uv = PoolVector2Array(  )
-color = Color( 1, 1, 1, 1 )
-vertex_colors = PoolColorArray(  )
-offset = Vector2( 0, 0 )
-antialiased = false
-texture = null
-texture_offset = Vector2( 0, 0 )
-texture_scale = Vector2( 1, 1 )
-texture_rotation_degrees = 0.0
-invert_enable = false
-invert_border = 100.0
 
 
