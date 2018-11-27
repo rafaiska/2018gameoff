@@ -14,6 +14,10 @@ config/name="Chicken Downhill"
 run/main_scene="res://scenes/MainScene.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+global="*res://global.gd"
+
 [input]
 
 chicken_l_up=[ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":-1.0,"script":null)

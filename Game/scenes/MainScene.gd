@@ -22,9 +22,10 @@ const boost_max_speed = 300.0
 const goal_position = 20000.0
 
 func _ready():
-	pass
+	global.reset_time()
 
 func _reset():
+	global.reset_time()
 	chicken_speed = 0.0  # Your desire to live
 	farmer_position = 0.0
 	chicken_position = 800.0  # > 0 for a head start
@@ -69,6 +70,7 @@ func _victory():
 	get_tree().change_scene("res://scenes/Victory.tscn")
 
 func _process(delta):
+	global.elapsed_time += delta
 	if farmer_position >= chicken_position:
 		_game_over()
 	elif chicken_position >= goal_position:

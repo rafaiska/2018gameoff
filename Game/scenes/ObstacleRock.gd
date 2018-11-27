@@ -4,6 +4,16 @@ var angle = 0.0
 var speed = 0.0
 onready var main_scene = get_tree().current_scene
 onready var rigid_body = get_node("RigidBody2D")
+onready var sprites = {
+	'rock': get_node("RigidBody2D/RockSprite"),
+	'haystack': get_node("RigidBody2D/HaystackSprite"),
+	'stump': get_node("RigidBody2D/StumpSprite")
+	}
+onready var shapes = {
+	'rock': get_node("RigidBody2D/RockShape"),
+	'haystack': get_node("RigidBody2D/HaystackShape"),
+	'stump': get_node("RigidBody2D/StumpShape")
+	}
 
 func _ready():
 	_update_scale()
@@ -28,6 +38,18 @@ func _process(delta):
 		queue_free()
 	_update_scale()
 
+func set_type(obstacle_type):
+	for shape in shapes:
+		if shape == obstacle_type:
+			shapes[shape].disabled = false
+		else:
+			shapes[shape].disabled = true
+
+	for sprite in sprites:
+		if sprite == obstacle_type:
+			sprites[sprite].visible = true
+		else:
+			sprites[sprite].visible = false
 
 func _on_RigidBody2D_body_entered(body):
 	if body.name == "ChickenBody":
