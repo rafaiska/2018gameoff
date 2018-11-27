@@ -10,6 +10,7 @@ var difficulty = 1.0
 var is_pecking_time = false
 var pecking_time_check = {1: false, 2: false, 3:false, 4:false}
 onready var pecking_time_warn = get_node("PeckingTimeWarn")
+onready var chicken = get_node("Road/Chicken")
 
 # Chicken speed constants
 const regular_acceleration = 25.0
@@ -38,14 +39,18 @@ func accelerate(accel_rate, delta):
 	chicken_speed += accel_rate * delta
 
 func crash():
+	get_node("CrashSFX").play()
+	chicken.start_crashing(chicken_speed)
 	chicken_speed = 0.0
 	if boosting:
 		boosting = false
 
 func boost():
+	get_node("BoostSFX").play()
 	boosting = true
 
 func _start_pecking_time():
+	get_node("PeckingTimeSFX").play()
 	is_pecking_time = true
 	pecking_time_warn.start()
 

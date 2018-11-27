@@ -4,13 +4,36 @@ onready var main_scene = get_tree().current_scene
 onready var peckingtime_warn = get_node("PeckingTime")
 onready var press_warn = get_node("Press")
 onready var key_warn = get_node("Key")
-const time_to_peck = 8.0
+const time_to_peck = 4.0
 const time_to_warn = 2.0
 var elapsed_time = null
 const key_map = {
 		'A': KEY_A,
 		'B': KEY_B,
-		'C': KEY_C
+		'C': KEY_C,
+		'D': KEY_D,
+		'E': KEY_E,
+		'F': KEY_F,
+		'G': KEY_G,
+		'H': KEY_H,
+		'I': KEY_I,
+		'J': KEY_J,
+		'K': KEY_K,
+		'L': KEY_L,
+		'M': KEY_M,
+		'N': KEY_N,
+		'O': KEY_O,
+		'P': KEY_P,
+		'Q': KEY_Q,
+		'R': KEY_R,
+		'S': KEY_S,
+		'T': KEY_T,
+		'U': KEY_U,
+		'V': KEY_V,
+		'W': KEY_W,
+		'X': KEY_X,
+		'Y': KEY_Y,
+		'Z': KEY_Z
 	}
 var chosen_key = 'A'
 

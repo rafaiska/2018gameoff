@@ -20,7 +20,7 @@ func _input(event):
 			_on_TextureButton2_pressed()
 
 func _on_TextureButton_pressed():
-	get_tree().change_scene("res://scenes/MainScene.tscn")
+	get_tree().change_scene("res://scenes/GetStarted.tscn")
 
 func _on_TextureButton2_pressed():
 	get_tree().quit()

@@ -73,7 +73,6 @@ position = Vector2( 195.972, 184.359 )
 scale = Vector2( 4.45151, 4.45151 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
 playing = true
 
 [node name="Press" type="Sprite" parent="PressKey" index="0"]
