@@ -18,9 +18,9 @@ extents = Vector2( 21.7678, 17.8324 )
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 44.7387, 11.6595 )
+extents = Vector2( 46.7156, 9.503 )
 
-[node name="ObstacleRock" type="Node2D"]
+[node name="ObstacleRock" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -72,14 +72,13 @@ disabled = true
 
 [node name="StumpSprite" type="Sprite" parent="RigidBody2D" index="4"]
 
-visible = false
 scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="StumpShape" type="CollisionShape2D" parent="RigidBody2D" index="5"]
 
-position = Vector2( -4.5295, 13.8095 )
+position = Vector2( -4.14208, 17.1026 )
 scale = Vector2( 1, 1.14144 )
 shape = SubResource( 3 )
 disabled = true

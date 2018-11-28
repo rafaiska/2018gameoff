@@ -23,7 +23,7 @@ func _update_velocity(y):
 	rigid_body.set_axis_velocity(Vector2(speed * y_rate * cos(angle), speed * y_rate * sin(angle)))
 
 func _update_scale():
-	var scale_mul = self.rigid_body.position.y - 50
+	var scale_mul = self.rigid_body.position.y - 100
 	scale_mul /= 80.0
 	if scale_mul < 0.0:
 		scale_mul = 0.0
@@ -34,7 +34,7 @@ func _process(delta):
 	if main_scene.chicken_speed != speed:
 		speed = main_scene.chicken_speed
 	_update_velocity(self.rigid_body.position.y)
-	if self.rigid_body.position.y >= 340:
+	if self.rigid_body.position.y >= 400:
 		queue_free()
 	_update_scale()
 

@@ -4,6 +4,7 @@ const spawn_rate = 1.0
 
 onready var chicken = get_node("Chicken")
 onready var gen_src = get_node("ObstacleGen/GenSrc")
+onready var background = get_node("AnimatedSprite")
 onready var main_scene = get_tree().current_scene
 
 var time_since_last_spawn = 0.0
@@ -15,6 +16,7 @@ func _ready():
 
 func _process(delta):
 	var speed = main_scene.chicken_speed
+	background.frames.set_animation_speed('default', int(speed / 10.0))
 	var difficulty = main_scene.difficulty
 	time_since_last_spawn += delta
 	time_since_last_scen_spawn += delta

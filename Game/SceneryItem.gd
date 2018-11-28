@@ -21,7 +21,7 @@ func _set_type(scitem_type):
 			sprites[sprite].visible = false
 
 func _test_limits():
-	if position.x < -200 or position.x > 200 or position.y >= 340:
+	if position.x < -250 or position.x > 250 or position.y >= 400:
 		queue_free()
 
 func _update_scale():

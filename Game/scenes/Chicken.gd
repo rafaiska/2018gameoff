@@ -48,7 +48,8 @@ func _check_movement():
 	var l_y_axis = Input.get_joy_axis(0,1)
 	var r_x_axis = Input.get_joy_axis(0,2)
 	var r_y_axis = Input.get_joy_axis(0,3)
-	if l_x_axis < 0.0 and r_x_axis > 0.0:
+	var LR_is_OK = Input.is_action_pressed('controller_L') and Input.is_action_pressed('controller_R')
+	if LR_is_OK and l_x_axis < 0.0 and r_x_axis > 0.0:
 		_set_thumble(false)
 		move((l_y_axis - r_y_axis) / 2.0)
 	else:

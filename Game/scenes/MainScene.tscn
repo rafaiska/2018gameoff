@@ -17,8 +17,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Road" parent="." index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 0.284206, -17.5694 )
-scale = Vector2( 0.157433, 0.183282 )
+position = Vector2( -0.122514, -19.2382 )
+scale = Vector2( 0.133597, 0.187109 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Background" type="Sprite" parent="." index="1"]

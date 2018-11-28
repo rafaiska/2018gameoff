@@ -40,7 +40,7 @@ texture = ExtResource( 2 )
 
 frames = SubResource( 1 )
 animation = "run"
-frame = 6
+frame = 5
 playing = true
 _sections_unfolded = [ "Transform" ]
 

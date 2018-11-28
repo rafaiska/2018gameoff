@@ -73,6 +73,7 @@ position = Vector2( 195.972, 184.359 )
 scale = Vector2( 4.45151, 4.45151 )
 frames = SubResource( 1 )
 animation = "default"
+frame = 1
 playing = true
 
 [node name="Press" type="Sprite" parent="PressKey" index="0"]
@@ -113,7 +114,7 @@ anchor_bottom = 0.0
 margin_left = -465.0
 margin_top = -277.0
 margin_right = -147.0
-margin_bottom = -61.0
+margin_bottom = -46.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -139,9 +140,9 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 text = "This game uses both an X-Box-Like controller and a keyboard. You have to connect a controller before proceeding with your frantic downhill jogging.
 
-Once the controller has been connected, hold both controller sticks at the starting position, as shown in the figure to the right.
+Once the controller has been connected, press both L and R buttons and hold both controller sticks at the starting position, as shown in the figure to the right.
 
-Then, press the required key on your keyboard. If there are no fingers left to do it, don't panic! Just peck your keyboard!"
+At last, press the required key on your keyboard. If there are no fingers left to do it, don't panic! Just peck your keyboard!"
 autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
