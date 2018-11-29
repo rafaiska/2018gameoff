@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Road.tscn" type="PackedScene" id=2]
@@ -7,8 +7,10 @@
 [ext_resource path="res://assets/sfx/crash.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/sfx/boost.wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/sfx/peckingtime.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/sfx/whistle.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/music/runningmusic.ogg" type="AudioStream" id=9]
 
-[node name="MainNode" type="Node2D"]
+[node name="MainNode" type="Node2D" index="0"]
 
 position = Vector2( 510.829, 301.148 )
 scale = Vector2( 15.9422, 9.35453 )
@@ -62,5 +64,23 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+
+[node name="Whistle" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = ExtResource( 8 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="RunMusic" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = ExtResource( 9 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 

@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Chicken Downhill"
-run/main_scene="res://scenes/MainScene.tscn"
+run/main_scene="res://scenes/GetStarted.tscn"
 config/icon="res://icon.png"
 
 [autoload]

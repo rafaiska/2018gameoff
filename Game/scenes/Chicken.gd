@@ -31,6 +31,10 @@ func start_crashing(speed):
 	crashing = true
 	get_node("Crashing").start()
 
+func peck():
+	sprite.animation = "peck"
+	get_node("Pecking").start()
+
 func _update_animation_speed():
 	sprite.frames.set_animation_speed('run', int(speed / 10.0))
 
@@ -69,3 +73,7 @@ func _on_ThumbleTimer_timeout():
 func _on_Crashing_timeout():
 	crashing = false
 	sprite.rotation = 0.0
+
+
+func _on_Pecking_timeout():
+	sprite.animation = "run"

@@ -25,10 +25,12 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
 position = Vector2( 1.5053, 101.876 )
-scale = Vector2( 0.137535, 0.137535 )
+scale = Vector2( 0.27507, 0.27507 )
 frames = SubResource( 1 )
 animation = "default"
+frame = 2
 playing = true
+_sections_unfolded = [ "Transform" ]
 
 [node name="ObstacleGen" type="Node2D" parent="." index="1"]
 

@@ -47,6 +47,7 @@ func crash():
 
 func boost():
 	get_node("BoostSFX").play()
+	chicken.peck()
 	boosting = true
 
 func _start_pecking_time():

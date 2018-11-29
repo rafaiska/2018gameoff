@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/Chicken.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/chicken/shadow.png" type="Texture" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://assets/images/chicken/run8.png" type="Texture" id=10]
 [ext_resource path="res://assets/images/chicken/run9.png" type="Texture" id=11]
 [ext_resource path="res://assets/images/chicken/run10.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/chicken/peck1.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/chicken/peck2.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/chicken/peck3.png" type="Texture" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -20,6 +23,11 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 12.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "peck",
+"speed": 14.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -40,7 +48,7 @@ texture = ExtResource( 2 )
 
 frames = SubResource( 1 )
 animation = "run"
-frame = 5
+frame = 4
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -71,8 +79,17 @@ wait_time = 1.0
 one_shot = true
 autostart = false
 
+[node name="Pecking" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
 [connection signal="timeout" from="ThumbleTimer" to="." method="_on_ThumbleTimer_timeout"]
 
 [connection signal="timeout" from="Crashing" to="." method="_on_Crashing_timeout"]
+
+[connection signal="timeout" from="Pecking" to="." method="_on_Pecking_timeout"]
 
 
