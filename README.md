@@ -4,6 +4,8 @@ This repository contains a game made for the Game Off Game Jam 2018.
 
 Chicken Downhill is a racing game which uses hybrid controls. Both an X-Box-Like controller and a keyboard are necessary to play it.
 
+This game was developed by Tatopeba Games: a small, independent game studio. Please visit our homepage and support us: http://www.tatopeba.com.br
+
 # Story
 
 In a farm at the top of the hill, a chicken escapes its coop to avoid becoming the farmer's next meal. However, the farmer won't let his livestock go away that easily.
@@ -32,9 +34,11 @@ To move your chicken around, you have to:
 
 Remember to keep the controller sticks in the allowed regions. Otherwise, the chicken will stumble (and eventually get fried).
 
+![Controls1](Game/assets/images/controls2.png)
+
 # Pecking time!
 
-![Controls1](Game/assets/images/controls2.png)
+![Controls1](Game/assets/images/controls3.png)
 
 There are some moments in the game that will require pressing keys on the keyboard.
 

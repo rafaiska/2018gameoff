@@ -1,86 +1,101 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/GetStarted.gd" type="Script" id=1]
 [ext_resource path="res://scenes/InitPane.gd" type="Script" id=2]
-[ext_resource path="res://assets/images/controls2.png" type="Texture" id=3]
-[ext_resource path="res://assets/images/controls1.png" type="Texture" id=4]
-[ext_resource path="res://assets/images/icons/initscreen.png" type="Texture" id=5]
-[ext_resource path="res://assets/images/icons/logo.png" type="Texture" id=6]
-[ext_resource path="res://assets/SourceCodeVariable-Roman.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://assets/images/icons/no_controller.png" type="Texture" id=8]
-[ext_resource path="res://assets/images/icons/start_controller.png" type="Texture" id=9]
-[ext_resource path="res://assets/images/icons/wrong.png" type="Texture" id=10]
-[ext_resource path="res://assets/images/icons/ok.png" type="Texture" id=11]
-[ext_resource path="res://assets/images/icons/keyreleased.png" type="Texture" id=12]
-[ext_resource path="res://assets/images/icons/keypressed2.png" type="Texture" id=13]
-[ext_resource path="res://assets/images/press.png" type="Texture" id=14]
-[ext_resource path="res://assets/music/intromusic.ogg" type="AudioStream" id=15]
+[ext_resource path="res://assets/images/controls3.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/controls2.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/controls1.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/icons/initscreen.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/icons/logo.png" type="Texture" id=7]
+[ext_resource path="res://assets/SourceCodeVariable-Roman.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/images/icons/no_controller.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/icons/start_controller.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/icons/wrong.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/icons/ok.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/icons/keyreleased.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/icons/keypressed2.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/press.png" type="Texture" id=15]
+[ext_resource path="res://assets/music/intromusic.ogg" type="AudioStream" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 42
 use_mipmaps = false
 use_filter = true
-font_data = ExtResource( 7 )
+font_data = ExtResource( 8 )
+_sections_unfolded = [ "Settings" ]
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 18
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 8 )
 _sections_unfolded = [ "Settings" ]
 
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[node name="GetStarted" type="Node2D"]
+[node name="GetStarted" type="Node2D" index="0"]
 
 position = Vector2( 478.852, 291.12 )
 script = ExtResource( 1 )
 
 [node name="InitPane" type="Node2D" parent="." index="0"]
 
-visible = false
 z_index = 1
 script = ExtResource( 2 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="controls2" type="Sprite" parent="InitPane" index="0"]
+[node name="controls3" type="Sprite" parent="InitPane" index="0"]
 
 visible = false
-position = Vector2( 33.1024, 9.01252 )
-scale = Vector2( 0.291921, 0.241975 )
+position = Vector2( 33.1935, 8.91336 )
+scale = Vector2( 0.583847, 0.483893 )
 texture = ExtResource( 3 )
 
-[node name="controls1" type="Sprite" parent="InitPane" index="1"]
+[node name="controls2" type="Sprite" parent="InitPane" index="1"]
 
 visible = false
-position = Vector2( 33.053, 9.13736 )
-scale = Vector2( 0.291681, 0.241699 )
+position = Vector2( 33.1698, 8.90812 )
+scale = Vector2( 0.583831, 0.483911 )
 texture = ExtResource( 4 )
 
-[node name="Background" type="Sprite" parent="InitPane" index="2"]
+[node name="controls1" type="Sprite" parent="InitPane" index="2"]
+
+visible = false
+position = Vector2( 33.1545, 8.91644 )
+scale = Vector2( 0.583783, 0.483821 )
+texture = ExtResource( 5 )
+
+[node name="Background" type="Sprite" parent="InitPane" index="3"]
 
 position = Vector2( 33.2121, 9.00418 )
 scale = Vector2( 1.00004, 0.828715 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
-[node name="Logo" type="Sprite" parent="InitPane" index="3"]
+[node name="Logo" type="Sprite" parent="InitPane" index="4"]
 
 position = Vector2( -146.779, -125.627 )
 scale = Vector2( 0.7515, 0.7515 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
-[node name="Label" type="Label" parent="InitPane" index="4"]
+[node name="Label" type="Label" parent="InitPane" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -448.0
-margin_top = 230.0
-margin_right = 177.0
-margin_bottom = 284.0
+margin_left = -450.0
+margin_top = 219.0
+margin_right = 175.0
+margin_bottom = 273.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -89,6 +104,29 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
 text = "Press any button to start"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label2" type="Label" parent="InitPane" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -475.0
+margin_top = 284.0
+margin_right = 31.0
+margin_bottom = 307.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "Copyright (c) 2018 Tatopeba Games, MIT License"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -114,28 +152,28 @@ invert_border = 100.0
 
 position = Vector2( -314.961, 112.54 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Controller" type="Sprite" parent="." index="3"]
 
 position = Vector2( 122.581, -146.208 )
 scale = Vector2( 0.339018, 0.339018 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="ControllerNOTOK" type="Sprite" parent="Controller" index="0"]
 
 visible = false
 position = Vector2( 780.463, -6.48419 )
 scale = Vector2( 17, 17 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="ControllerOK" type="Sprite" parent="Controller" index="1"]
 
 position = Vector2( 758.351, -2.13541 )
 scale = Vector2( 17, 17 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PressKey" type="AnimatedSprite" parent="." index="4"]
@@ -151,7 +189,7 @@ playing = true
 
 position = Vector2( -0.702805, -27.7388 )
 scale = Vector2( 2.056, 2.056 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 
 [node name="Label" type="Label" parent="PressKey" index="1"]
 
@@ -222,7 +260,7 @@ _sections_unfolded = [ "Anchor", "Rect" ]
 
 [node name="IntroMusic" type="AudioStreamPlayer" parent="." index="6"]
 
-stream = ExtResource( 15 )
+stream = ExtResource( 16 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true

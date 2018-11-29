@@ -14,11 +14,14 @@ func next():
 		get_node("Background").visible = false
 		get_node("Logo").visible = false
 		get_node("Label").visible = false
+		get_node("Label2").visible = false
 		get_node("controls1").visible = true
 	elif get_node("controls1").visible:
 		get_node("controls1").visible = false
 		get_node("controls2").visible = true
 	elif get_node("controls2").visible:
 		get_node("controls2").visible = false
+		get_node("controls3").visible = true
+	elif get_node("controls3").visible:
 		self.visible = false
 		global.intro_enabled = false
