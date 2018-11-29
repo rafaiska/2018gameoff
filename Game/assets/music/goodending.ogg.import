@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/goodending.ogg-4645c36b2328b14a6090f4b12d91be94.oggstr"
+
+[deps]
+
+source_file="res://assets/music/goodending.ogg"
+dest_files=[ "res://.import/goodending.ogg-4645c36b2328b14a6090f4b12d91be94.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

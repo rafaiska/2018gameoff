@@ -25,7 +25,7 @@ use_filter = true
 font_data = ExtResource( 8 )
 _sections_unfolded = [ "Settings" ]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 
 size = 18
 use_mipmaps = false
@@ -33,7 +33,7 @@ use_filter = false
 font_data = ExtResource( 8 )
 _sections_unfolded = [ "Settings" ]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
 "frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
@@ -42,7 +42,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="GetStarted" type="Node2D" index="0"]
+[node name="GetStarted" type="Node2D"]
 
 position = Vector2( 478.852, 291.12 )
 script = ExtResource( 1 )
@@ -125,7 +125,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Copyright (c) 2018 Tatopeba Games, MIT License"
 percent_visible = 1.0
 lines_skipped = 0
@@ -180,9 +180,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 position = Vector2( 195.972, 184.359 )
 scale = Vector2( 4.45151, 4.45151 )
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 animation = "default"
-frame = 1
 playing = true
 
 [node name="Press" type="Sprite" parent="PressKey" index="0"]

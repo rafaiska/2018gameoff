@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/badending.ogg-f0ebbbfc9a594e43918ea89cb0606bb9.oggstr"
+
+[deps]
+
+source_file="res://assets/music/badending.ogg"
+dest_files=[ "res://.import/badending.ogg-f0ebbbfc9a594e43918ea89cb0606bb9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

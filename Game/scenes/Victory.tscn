@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Victory.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/good_ending.png" type="Texture" id=2]
 [ext_resource path="res://assets/SourceCodeVariable-Roman.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/music/goodending.ogg" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -24,7 +25,7 @@ use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 3 )
 
-[node name="Victory" type="Control"]
+[node name="Victory" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -94,5 +95,14 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Visibility", "custom_fonts" ]
+
+[node name="Good?EndingMusic" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 
