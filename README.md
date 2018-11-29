@@ -52,10 +52,12 @@ If your peck succeeds, the chicken shall receive a nice boosting power, which gi
 
 The following open source assets were used in this project:
 
-* Intro music: https://www.youtube.com/watch?v=Ih9LHLdJTI4
-* Downhill music: https://www.youtube.com/watch?v=tY9tzsIG9kM
+* Intro music theme: https://www.youtube.com/watch?v=Ih9LHLdJTI4
+* Downhill music theme: https://www.youtube.com/watch?v=tY9tzsIG9kM
 * TrueType font: https://github.com/adobe-fonts/source-code-pro
 * Stumble SFX: https://freesound.org/people/bone666138/sounds/198876/
 * Pecking Time Alert SFX: https://freesound.org/people/steveygos93/sounds/103588/
 * Boost SFX: https://freesound.org/people/Eponn/sounds/420998/
 * Soccer whistle SFX: https://freesound.org/people/Pablo-F/sounds/90743/
+* Good ending music theme: https://www.youtube.com/audiolibrary/music?feature=blog (The 126ers - Palmetto Moon)
+* Bad ending music theme: https://www.youtube.com/audiolibrary/music?feature=blog (Josh Lippi & The Overtimers - St. Francis)
