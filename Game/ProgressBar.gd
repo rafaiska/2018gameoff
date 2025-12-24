@@ -1,14 +1,14 @@
 extends Node2D
 
-onready var main_scene = get_tree().current_scene
-onready var farmer = get_node("Farmer")
-onready var chicken = get_node("Chicken")
-onready var bar = get_node("Bar")
+@onready var main_scene = get_tree().current_scene
+@onready var farmer = get_node("Farmer")
+@onready var chicken = get_node("Chicken")
+@onready var bar = get_node("Bar")
 
 func _ready():
 	bar.color.b8 = 0
 
-func _process(delta):
+func _process(_delta):
 	farmer.position.x = (main_scene.farmer_position / main_scene.goal_position) * 200
 	chicken.position.x = (main_scene.chicken_position / main_scene.goal_position) * 200
 	if main_scene.difficulty <= 2.5:

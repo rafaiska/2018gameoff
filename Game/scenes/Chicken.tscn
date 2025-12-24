@@ -1,95 +1,127 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=18 format=3 uid="uid://blfw4ubd3mucx"]
 
-[ext_resource path="res://scenes/Chicken.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/chicken/shadow.png" type="Texture" id=2]
-[ext_resource path="res://assets/images/chicken/run1.png" type="Texture" id=3]
-[ext_resource path="res://assets/images/chicken/run2.png" type="Texture" id=4]
-[ext_resource path="res://assets/images/chicken/run3.png" type="Texture" id=5]
-[ext_resource path="res://assets/images/chicken/run4.png" type="Texture" id=6]
-[ext_resource path="res://assets/images/chicken/run5.png" type="Texture" id=7]
-[ext_resource path="res://assets/images/chicken/run6.png" type="Texture" id=8]
-[ext_resource path="res://assets/images/chicken/run7.png" type="Texture" id=9]
-[ext_resource path="res://assets/images/chicken/run8.png" type="Texture" id=10]
-[ext_resource path="res://assets/images/chicken/run9.png" type="Texture" id=11]
-[ext_resource path="res://assets/images/chicken/run10.png" type="Texture" id=12]
-[ext_resource path="res://assets/images/chicken/peck1.png" type="Texture" id=13]
-[ext_resource path="res://assets/images/chicken/peck2.png" type="Texture" id=14]
-[ext_resource path="res://assets/images/chicken/peck3.png" type="Texture" id=15]
+[ext_resource type="Script" uid="uid://djppoocxspxqu" path="res://scenes/Chicken.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://curnp7gvqgonl" path="res://assets/images/chicken/shadow.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cwubmf66wuk6m" path="res://assets/images/chicken/run1.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://da5a1weecrdn7" path="res://assets/images/chicken/run2.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://11qas8dxelfs" path="res://assets/images/chicken/run3.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://nrnctnkm0fuc" path="res://assets/images/chicken/run4.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://cywxxw3ssookq" path="res://assets/images/chicken/run5.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://c3vhwb0nqfaio" path="res://assets/images/chicken/run6.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://qo633ch6s54q" path="res://assets/images/chicken/run7.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dw0i74h6hg4yt" path="res://assets/images/chicken/run8.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://brvfmpyd48suq" path="res://assets/images/chicken/run9.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://dk5mby42ujfi0" path="res://assets/images/chicken/run10.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://bwunmqs38auc6" path="res://assets/images/chicken/peck1.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://rbemojw4o2og" path="res://assets/images/chicken/peck2.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://bunc5h1is7mw4" path="res://assets/images/chicken/peck3.png" id="15"]
 
-[sub_resource type="SpriteFrames" id=1]
-
-animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "run",
-"speed": 12.0
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13")
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 13 ) ],
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}],
 "loop": true,
-"name": "peck",
+"name": &"peck",
 "speed": 14.0
-} ]
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}]
 
-[sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
-extents = Vector2( 12.514, 10.7438 )
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(25.028, 21.4876)
 
 [node name="Chicken" type="Node2D"]
+script = ExtResource("1")
 
-script = ExtResource( 1 )
+[node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(-2.61583, 14.8242)
+texture = ExtResource("2")
 
-[node name="shadow" type="Sprite" parent="." index="0"]
-
-position = Vector2( -2.61583, 14.8242 )
-texture = ExtResource( 2 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
-
-frames = SubResource( 1 )
-animation = "run"
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("1")
+animation = &"run"
+autoplay = "run"
 frame = 4
-playing = true
-_sections_unfolded = [ "Transform" ]
 
-[node name="ChickenBody" type="KinematicBody2D" parent="." index="2"]
+[node name="ChickenBody" type="CharacterBody2D" parent="."]
+motion_mode = 1
 
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChickenBody"]
+position = Vector2(-2.08744, 8.44127)
+scale = Vector2(1.50899, 1.02488)
+shape = SubResource("2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ChickenBody" index="0"]
-
-position = Vector2( -2.08744, 8.44127 )
-scale = Vector2( 1.50899, 1.02488 )
-shape = SubResource( 2 )
-
-[node name="ThumbleTimer" type="Timer" parent="." index="3"]
-
+[node name="ThumbleTimer" type="Timer" parent="."]
 process_mode = 1
-wait_time = 1.0
 one_shot = true
-autostart = false
 
-[node name="Crashing" type="Timer" parent="." index="4"]
-
+[node name="Crashing" type="Timer" parent="."]
 process_mode = 1
-wait_time = 1.0
 one_shot = true
-autostart = false
 
-[node name="Pecking" type="Timer" parent="." index="5"]
-
+[node name="Pecking" type="Timer" parent="."]
 process_mode = 1
-wait_time = 1.0
 one_shot = true
-autostart = false
 
 [connection signal="timeout" from="ThumbleTimer" to="." method="_on_ThumbleTimer_timeout"]
-
 [connection signal="timeout" from="Crashing" to="." method="_on_Crashing_timeout"]
-
 [connection signal="timeout" from="Pecking" to="." method="_on_Pecking_timeout"]
-
-

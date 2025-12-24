@@ -2,14 +2,15 @@ extends Node2D
 
 var angle = 0.0
 var speed = 0.0
-onready var main_scene = get_tree().current_scene
-onready var rigid_body = get_node("RigidBody2D")
-onready var sprites = {
+var starting_y: float
+@onready var main_scene = get_tree().current_scene
+@onready var rigid_body = get_node("RigidBody2D")
+@onready var sprites = {
 	'rock': get_node("RigidBody2D/RockSprite"),
 	'haystack': get_node("RigidBody2D/HaystackSprite"),
 	'stump': get_node("RigidBody2D/StumpSprite")
 	}
-onready var shapes = {
+@onready var shapes = {
 	'rock': get_node("RigidBody2D/RockShape"),
 	'haystack': get_node("RigidBody2D/HaystackShape"),
 	'stump': get_node("RigidBody2D/StumpShape")
@@ -17,33 +18,31 @@ onready var shapes = {
 
 func _ready():
 	_update_scale()
+	starting_y = global_position.y
 
 func _update_velocity(y):
 	var y_rate = (y + 170.0) / 170.0
-	rigid_body.set_axis_velocity(Vector2(speed * y_rate * cos(angle), speed * y_rate * sin(angle)))
+	rigid_body.set_velocity(Vector2(speed * y_rate * cos(angle), speed * y_rate * sin(angle)))
 
 func _update_scale():
-	var scale_mul = self.rigid_body.position.y - 100
-	scale_mul /= 80.0
-	if scale_mul < 0.0:
-		scale_mul = 0.0
-	self.rigid_body.scale.x *= scale_mul
-	self.rigid_body.scale.y *= scale_mul
+	var scale_mul = abs(1.0 - ((main_scene.chicken_y - rigid_body.global_position.y) / (main_scene.chicken_y - starting_y)))
+	self.rigid_body.scale = Vector2(scale_mul * 2, scale_mul * 2)
 
-func _process(delta):
+func _process(_delta):
 	if main_scene.chicken_speed != speed:
 		speed = main_scene.chicken_speed
-	_update_velocity(self.rigid_body.position.y)
-	if self.rigid_body.position.y >= 400:
+	_update_velocity(self.rigid_body.global_position.y)
+	rigid_body.move_and_slide()
+	if self.rigid_body.global_position.y >= main_scene.chicken_y + 50.0:
 		queue_free()
 	_update_scale()
 
 func set_type(obstacle_type):
 	for shape in shapes:
 		if shape == obstacle_type:
-			shapes[shape].disabled = false
+			shapes[shape].monitoring = false
 		else:
-			shapes[shape].disabled = true
+			shapes[shape].monitoring = true
 
 	for sprite in sprites:
 		if sprite == obstacle_type:

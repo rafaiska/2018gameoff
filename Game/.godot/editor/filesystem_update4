@@ -1,0 +1,17 @@
+res://scenes/Road.tscn
+res://scenes/Road.gd
+res://scenes/Chicken.gd
+res://scenes/GenSrc.gd
+res://PeckingTimeWarn.gd
+res://scenes/MainScene.gd
+res://scenes/GetStarted.gd
+res://scenes/Victory.gd
+res://scenes/GameOver.gd
+res://scenes/GetStarted.tscn
+res://scenes/Chicken.tscn
+res://scenes/PeckingTimeWarn.tscn
+res://scenes/Victory.tscn
+res://scenes/GameOver.tscn
+res://scenes/ObstacleRock.tscn
+res://scenes/ObstacleRock.gd
+res://scenes/MainScene.tscn

@@ -1,269 +1,163 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=17 format=3 uid="uid://hdih44a4ll5r"]
 
-[ext_resource path="res://scenes/GetStarted.gd" type="Script" id=1]
-[ext_resource path="res://scenes/InitPane.gd" type="Script" id=2]
-[ext_resource path="res://assets/images/controls3.png" type="Texture" id=3]
-[ext_resource path="res://assets/images/controls2.png" type="Texture" id=4]
-[ext_resource path="res://assets/images/controls1.png" type="Texture" id=5]
-[ext_resource path="res://assets/images/icons/initscreen.png" type="Texture" id=6]
-[ext_resource path="res://assets/images/icons/logo.png" type="Texture" id=7]
-[ext_resource path="res://assets/SourceCodeVariable-Roman.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://assets/images/icons/no_controller.png" type="Texture" id=9]
-[ext_resource path="res://assets/images/icons/start_controller.png" type="Texture" id=10]
-[ext_resource path="res://assets/images/icons/wrong.png" type="Texture" id=11]
-[ext_resource path="res://assets/images/icons/ok.png" type="Texture" id=12]
-[ext_resource path="res://assets/images/icons/keyreleased.png" type="Texture" id=13]
-[ext_resource path="res://assets/images/icons/keypressed2.png" type="Texture" id=14]
-[ext_resource path="res://assets/images/press.png" type="Texture" id=15]
-[ext_resource path="res://assets/music/intromusic.ogg" type="AudioStream" id=16]
+[ext_resource type="Script" uid="uid://cu6gnkddplskb" path="res://scenes/GetStarted.gd" id="1"]
+[ext_resource type="Script" uid="uid://c0mc1vgjd7g1l" path="res://scenes/InitPane.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://c26brqhbtybox" path="res://assets/images/controls3.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cv4qqnm8hfu70" path="res://assets/images/controls2.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://0ctjo4alcnjn" path="res://assets/images/controls1.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://c4b3uj65x0nma" path="res://assets/images/icons/initscreen.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://d0u577vree1lq" path="res://assets/images/icons/logo.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://c61y352v8p81q" path="res://assets/images/icons/no_controller.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://e15tyw6q7phd" path="res://assets/images/icons/start_controller.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://pndqv15yh55b" path="res://assets/images/icons/wrong.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://dnkdmd4empbvt" path="res://assets/images/icons/ok.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://fvwl7n3qhlv" path="res://assets/images/icons/keyreleased.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://isa0eojw0ayd" path="res://assets/images/icons/keypressed2.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://fyormrfd58j4" path="res://assets/images/press.png" id="15"]
+[ext_resource type="AudioStream" uid="uid://bh2cb3acx2l1w" path="res://assets/music/intromusic.ogg" id="16"]
 
-[sub_resource type="DynamicFont" id=1]
-
-size = 42
-use_mipmaps = false
-use_filter = true
-font_data = ExtResource( 8 )
-_sections_unfolded = [ "Settings" ]
-
-[sub_resource type="DynamicFont" id=2]
-
-size = 18
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 8 )
-_sections_unfolded = [ "Settings" ]
-
-[sub_resource type="SpriteFrames" id=3]
-
-animations = [ {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}],
 "loop": true,
-"name": "default",
+"name": &"default",
 "speed": 5.0
-} ]
+}]
 
 [node name="GetStarted" type="Node2D"]
+script = ExtResource("1")
 
-position = Vector2( 478.852, 291.12 )
-script = ExtResource( 1 )
-
-[node name="InitPane" type="Node2D" parent="." index="0"]
-
+[node name="InitPane" type="Node2D" parent="."]
 z_index = 1
-script = ExtResource( 2 )
-_sections_unfolded = [ "Visibility" ]
+position = Vector2(480.335, 291.12)
+script = ExtResource("2")
 
-[node name="controls3" type="Sprite" parent="InitPane" index="0"]
-
+[node name="controls3" type="Sprite2D" parent="InitPane"]
 visible = false
-position = Vector2( 33.1935, 8.91336 )
-scale = Vector2( 0.583847, 0.483893 )
-texture = ExtResource( 3 )
+position = Vector2(51.193512, 15.913361)
+scale = Vector2(0.583847, 0.483893)
+texture = ExtResource("3")
 
-[node name="controls2" type="Sprite" parent="InitPane" index="1"]
-
+[node name="controls2" type="Sprite2D" parent="InitPane"]
 visible = false
-position = Vector2( 33.1698, 8.90812 )
-scale = Vector2( 0.583831, 0.483911 )
-texture = ExtResource( 4 )
+position = Vector2(52.1698, 15.908112)
+scale = Vector2(0.583831, 0.483911)
+texture = ExtResource("4")
 
-[node name="controls1" type="Sprite" parent="InitPane" index="2"]
-
+[node name="controls1" type="Sprite2D" parent="InitPane"]
 visible = false
-position = Vector2( 33.1545, 8.91644 )
-scale = Vector2( 0.583783, 0.483821 )
-texture = ExtResource( 5 )
+position = Vector2(50.664993, 23.880005)
+scale = Vector2(0.583783, 0.483821)
+texture = ExtResource("5")
 
-[node name="Background" type="Sprite" parent="InitPane" index="3"]
+[node name="Background" type="Sprite2D" parent="InitPane"]
+position = Vector2(97.148, 32.879974)
+scale = Vector2(1.125, 0.8950275)
+texture = ExtResource("6")
 
-position = Vector2( 33.2121, 9.00418 )
-scale = Vector2( 1.00004, 0.828715 )
-texture = ExtResource( 6 )
+[node name="Logo" type="Sprite2D" parent="InitPane"]
+position = Vector2(-146.779, -125.627)
+scale = Vector2(0.7515, 0.7515)
+texture = ExtResource("7")
 
-[node name="Logo" type="Sprite" parent="InitPane" index="4"]
-
-position = Vector2( -146.779, -125.627 )
-scale = Vector2( 0.7515, 0.7515 )
-texture = ExtResource( 7 )
-
-[node name="Label" type="Label" parent="InitPane" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -450.0
-margin_top = 219.0
-margin_right = 175.0
-margin_bottom = 273.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+[node name="Label" type="Label" parent="InitPane"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = 171.0
+offset_right = 96.0
+offset_bottom = 194.0
+grow_horizontal = 2
+grow_vertical = 0
 text = "Press any button to start"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
 
-[node name="Label2" type="Label" parent="InitPane" index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -475.0
-margin_top = 284.0
-margin_right = 31.0
-margin_bottom = 307.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+[node name="Label2" type="Label" parent="InitPane"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -186.0
+offset_top = 329.0
+offset_right = 186.0
+offset_bottom = 352.0
+grow_horizontal = 2
+grow_vertical = 0
 text = "Copyright (c) 2018 Tatopeba Games, MIT License"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
 
-[node name="Background" type="Polygon2D" parent="." index="1"]
+[node name="Background" type="Polygon2D" parent="."]
+position = Vector2(0, 0.1539917)
+color = Color(0.466667, 0.701961, 0.996078, 1)
+polygon = PackedVector2Array(0, 0, 1153.483, -0.1539917, 1153.483, 647.846, 1.4830017, 646.846)
 
-position = Vector2( -480.335, -290.966 )
-polygon = PoolVector2Array( 0, 0, 1024, 0, 1024, 600, 0, 600 )
-uv = PoolVector2Array(  )
-color = Color( 0.466667, 0.701961, 0.996078, 1 )
-vertex_colors = PoolColorArray(  )
-offset = Vector2( 0, 0 )
-antialiased = false
-texture = null
-texture_offset = Vector2( 0, 0 )
-texture_scale = Vector2( 1, 1 )
-texture_rotation_degrees = 0.0
-invert_enable = false
-invert_border = 100.0
+[node name="NoController" type="Sprite2D" parent="."]
+position = Vector2(205.483, 531)
+scale = Vector2(2, 2)
+texture = ExtResource("9")
 
-[node name="NoController" type="Sprite" parent="." index="2"]
+[node name="Controller" type="Sprite2D" parent="."]
+position = Vector2(704.1093, 203.47076)
+scale = Vector2(0.339018, 0.339018)
+texture = ExtResource("10")
 
-position = Vector2( -314.961, 112.54 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Controller" type="Sprite" parent="." index="3"]
-
-position = Vector2( 122.581, -146.208 )
-scale = Vector2( 0.339018, 0.339018 )
-texture = ExtResource( 10 )
-
-[node name="ControllerNOTOK" type="Sprite" parent="Controller" index="0"]
-
+[node name="ControllerNOTOK" type="Sprite2D" parent="Controller"]
 visible = false
-position = Vector2( 780.463, -6.48419 )
-scale = Vector2( 17, 17 )
-texture = ExtResource( 11 )
-_sections_unfolded = [ "Transform" ]
+position = Vector2(780.463, -6.48419)
+scale = Vector2(17, 17)
+texture = ExtResource("11")
 
-[node name="ControllerOK" type="Sprite" parent="Controller" index="1"]
+[node name="ControllerOK" type="Sprite2D" parent="Controller"]
+position = Vector2(758.351, -2.13541)
+scale = Vector2(17, 17)
+texture = ExtResource("12")
 
-position = Vector2( 758.351, -2.13541 )
-scale = Vector2( 17, 17 )
-texture = ExtResource( 12 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+[node name="PressKey" type="AnimatedSprite2D" parent="."]
+position = Vector2(777.50037, 534.0377)
+scale = Vector2(4.45151, 4.45151)
+sprite_frames = SubResource("3")
+autoplay = "default"
 
-[node name="PressKey" type="AnimatedSprite" parent="." index="4"]
+[node name="Press" type="Sprite2D" parent="PressKey"]
+position = Vector2(-0.702805, -27.7388)
+scale = Vector2(2.056, 2.056)
+texture = ExtResource("15")
 
-position = Vector2( 195.972, 184.359 )
-scale = Vector2( 4.45151, 4.45151 )
-frames = SubResource( 3 )
-animation = "default"
-playing = true
-
-[node name="Press" type="Sprite" parent="PressKey" index="0"]
-
-position = Vector2( -0.702805, -27.7388 )
-scale = Vector2( 2.056, 2.056 )
-texture = ExtResource( 15 )
-
-[node name="Label" type="Label" parent="PressKey" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -9.0
-margin_top = -11.0
-margin_right = 3.0
-margin_bottom = 3.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+[node name="Label" type="Label" parent="PressKey"]
+offset_left = -7.373672
+offset_top = -14.035463
+offset_right = 4.626328
+offset_bottom = 8.964537
 text = "G"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors" ]
 
-[node name="Panel" type="Panel" parent="." index="5"]
+[node name="Panel" type="Panel" parent="."]
+offset_left = 17.483002
+offset_top = 14.0
+offset_right = 417.483
+offset_bottom = 421.0
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -465.0
-margin_top = -277.0
-margin_right = -147.0
-margin_bottom = -46.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="Label" type="Label" parent="Panel" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="Label" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
 anchor_right = 0.02
-anchor_bottom = 0.0
-margin_left = 9.0
-margin_top = 7.0
-margin_right = 302.64
-margin_bottom = 208.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 384.0
+offset_bottom = 401.0
 text = "This game uses both an X-Box-Like controller and a keyboard. You have to connect a controller before proceeding with your frantic downhill jogging.
 
 Once the controller has been connected, hold both L and R buttons and hold both controller sticks at the starting position, as shown in the figure to the right.
 
 At last, press the required key on your keyboard. If there are no fingers left to do it, don't panic! Just peck your keyboard!"
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Rect" ]
 
-[node name="IntroMusic" type="AudioStreamPlayer" parent="." index="6"]
-
-stream = ExtResource( 16 )
-volume_db = 0.0
-pitch_scale = 1.0
+[node name="IntroMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16")
 autoplay = true
-mix_target = 0
-bus = "Master"
-
-

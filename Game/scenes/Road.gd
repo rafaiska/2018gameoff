@@ -2,10 +2,10 @@ extends Node2D
 
 const spawn_rate = 1.0
 
-onready var chicken = get_node("Chicken")
-onready var gen_src = get_node("ObstacleGen/GenSrc")
-onready var background = get_node("AnimatedSprite")
-onready var main_scene = get_tree().current_scene
+@onready var chicken = get_node("Chicken")
+@onready var gen_src = get_node("ObstacleGen/GenSrc")
+@onready var background: AnimatedSprite2D = get_node("AnimatedSprite")
+@onready var main_scene = get_tree().current_scene
 
 var time_since_last_spawn = 0.0
 var time_since_last_scen_spawn = 0.0
@@ -16,7 +16,7 @@ func _ready():
 
 func _process(delta):
 	var speed = main_scene.chicken_speed
-	background.frames.set_animation_speed('default', int(speed / 10.0))
+	background.sprite_frames.set_animation_speed('default', int(speed / 10.0))
 	var difficulty = main_scene.difficulty
 	time_since_last_spawn += delta
 	time_since_last_scen_spawn += delta
@@ -27,3 +27,5 @@ func _process(delta):
 		gen_src.spawn_scen()
 		time_since_last_scen_spawn = 0.0
 	
+func get_chicken_y():
+	return get_node("Chicken").global_position.y

@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/runningmusic.ogg-03fbbfc013cbb9d2c3b3fe8f68d40aef.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bjwcljgxtfuws"
+path="res://.godot/imported/runningmusic.ogg-03fbbfc013cbb9d2c3b3fe8f68d40aef.oggvorbisstr"
 
 [deps]
 
 source_file="res://assets/music/runningmusic.ogg"
-dest_files=[ "res://.import/runningmusic.ogg-03fbbfc013cbb9d2c3b3fe8f68d40aef.oggstr" ]
+dest_files=["res://.godot/imported/runningmusic.ogg-03fbbfc013cbb9d2c3b3fe8f68d40aef.oggvorbisstr"]
 
 [params]
 
 loop=true
 loop_offset=8.13
+bpm=0
+beat_count=0
+bar_beats=4

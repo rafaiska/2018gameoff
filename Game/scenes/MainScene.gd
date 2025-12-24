@@ -2,6 +2,7 @@ extends Node2D
 
 const farmer_speed = 160.0  # How much he wants you for dinner
 var chicken_speed = 0.0  # Your desire to live
+var chicken_y
 var farmer_position = 0.0
 var chicken_position = 800.0  # > 0 for a head start
 var boosting = false
@@ -9,8 +10,8 @@ var difficulty = 1.0
 
 var is_pecking_time = false
 var pecking_time_check = {1: false, 2: false, 3:false, 4:false}
-onready var pecking_time_warn = get_node("PeckingTimeWarn")
-onready var chicken = get_node("Road/Chicken")
+@onready var pecking_time_warn = get_node("PeckingTimeWarn")
+@onready var chicken = get_node("Road/Chicken")
 
 # Chicken speed constants
 const regular_acceleration = 25.0
@@ -24,6 +25,7 @@ const goal_position = 20000.0
 
 func _ready():
 	global.reset_time()
+	chicken_y = get_node("Road").get_chicken_y()
 
 func _reset():
 	global.reset_time()
@@ -70,10 +72,10 @@ func _check_pecking_time():
 		pecking_time_check[4] = true
 
 func _game_over():
-	get_tree().change_scene("res://scenes/GameOver.tscn")
+	get_tree().change_scene_to_file("res://scenes/GameOver.tscn")
 
 func _victory():
-	get_tree().change_scene("res://scenes/Victory.tscn")
+	get_tree().change_scene_to_file("res://scenes/Victory.tscn")
 
 func _process(delta):
 	global.elapsed_time += delta

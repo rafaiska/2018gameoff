@@ -1,88 +1,59 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://8dvvfcfbkks3"]
 
-[ext_resource path="res://scenes/ObstacleRock.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/rock.png" type="Texture" id=2]
-[ext_resource path="res://assets/images/haystack.png" type="Texture" id=3]
-[ext_resource path="res://assets/images/stump.png" type="Texture" id=4]
+[ext_resource type="Script" uid="uid://dr4161g80j8ts" path="res://scenes/ObstacleRock.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c8rmnh4fpoicn" path="res://assets/images/rock.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dnjh70jx7tgoq" path="res://assets/images/haystack.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://e1o71s4etq4p" path="res://assets/images/stump.png" id="4"]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id="1"]
 
-custom_solver_bias = 0.0
-radius = 10.0
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(43.5356, 35.6648)
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(93.4312, 19.006)
 
-custom_solver_bias = 0.0
-extents = Vector2( 21.7678, 17.8324 )
+[node name="ObstacleRock" type="Node2D"]
+script = ExtResource("1")
 
-[sub_resource type="RectangleShape2D" id=3]
+[node name="RigidBody2D" type="CharacterBody2D" parent="."]
 
-custom_solver_bias = 0.0
-extents = Vector2( 46.7156, 9.503 )
+[node name="RockSprite" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("2")
 
-[node name="ObstacleRock" type="Node2D" index="0"]
+[node name="RockShape" type="Area2D" parent="RigidBody2D"]
 
-script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+[node name="RockShape" type="CollisionShape2D" parent="RigidBody2D/RockShape"]
+position = Vector2(0.611819, 0.36351)
+scale = Vector2(1.47813, 1.47813)
+shape = SubResource("1")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 0.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 1
-contact_monitor = true
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-
-[node name="RockSprite" type="Sprite" parent="RigidBody2D" index="0"]
-
-texture = ExtResource( 2 )
-
-[node name="RockShape" type="CollisionShape2D" parent="RigidBody2D" index="1"]
-
-position = Vector2( 0.611819, 0.36351 )
-scale = Vector2( 1.47813, 1.47813 )
-shape = SubResource( 1 )
-
-[node name="HaystackSprite" type="Sprite" parent="RigidBody2D" index="2"]
-
+[node name="HaystackSprite" type="Sprite2D" parent="RigidBody2D"]
 visible = false
-position = Vector2( 0.611819, 0.36351 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
+position = Vector2(0.611819, 0.36351)
+texture = ExtResource("3")
 
-[node name="HaystackShape" type="CollisionShape2D" parent="RigidBody2D" index="3"]
+[node name="HaystackShape" type="Area2D" parent="RigidBody2D"]
+visible = false
 
-position = Vector2( -0.323563, 11.6255 )
-scale = Vector2( 1, 0.677354 )
-shape = SubResource( 2 )
-disabled = true
+[node name="HaystackShape" type="CollisionShape2D" parent="RigidBody2D/HaystackShape"]
+position = Vector2(-0.323563, 11.6255)
+scale = Vector2(1, 0.677354)
+shape = SubResource("2")
 
-[node name="StumpSprite" type="Sprite" parent="RigidBody2D" index="4"]
+[node name="StumpSprite" type="Sprite2D" parent="RigidBody2D"]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("4")
 
-scale = Vector2( 2, 2 )
-texture = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
+[node name="StumpShape" type="Area2D" parent="RigidBody2D"]
+visible = false
 
-[node name="StumpShape" type="CollisionShape2D" parent="RigidBody2D" index="5"]
+[node name="StumpShape" type="CollisionShape2D" parent="RigidBody2D/StumpShape"]
+position = Vector2(-4.14208, 17.1026)
+scale = Vector2(1, 1.14144)
+shape = SubResource("3")
 
-position = Vector2( -4.14208, 17.1026 )
-scale = Vector2( 1, 1.14144 )
-shape = SubResource( 3 )
-disabled = true
-
-[connection signal="body_entered" from="RigidBody2D" to="." method="_on_RigidBody2D_body_entered"]
-
-
+[connection signal="body_entered" from="RigidBody2D/RockShape" to="." method="_on_RigidBody2D_body_entered"]
+[connection signal="body_entered" from="RigidBody2D/HaystackShape" to="." method="_on_RigidBody2D_body_entered"]
+[connection signal="body_entered" from="RigidBody2D/StumpShape" to="." method="_on_RigidBody2D_body_entered"]

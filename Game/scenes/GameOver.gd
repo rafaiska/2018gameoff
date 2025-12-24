@@ -14,13 +14,13 @@ func _ready():
 
 func _input(event):
 	if event is InputEventKey:
-		if event.scancode == KEY_Y:
+		if event.keycode == KEY_Y:
 			_on_TextureButton_pressed()
-		elif event.scancode == KEY_N:
+		elif event.keycode == KEY_N:
 			_on_TextureButton2_pressed()
 
 func _on_TextureButton_pressed():
-	get_tree().change_scene("res://scenes/GetStarted.tscn")
+	get_tree().change_scene_to_file("res://scenes/GetStarted.tscn")
 
 func _on_TextureButton2_pressed():
 	get_tree().quit()

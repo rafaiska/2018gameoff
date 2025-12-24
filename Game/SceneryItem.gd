@@ -1,10 +1,10 @@
 extends Node2D
 
-onready var sprites = {
+@onready var sprites = {
 		'bush': get_node("Bush"),
 		'tree': get_node("Tree")
 	}
-onready var main_scene = get_tree().current_scene
+@onready var main_scene = get_tree().current_scene
 var angle
 var chosen_type
 

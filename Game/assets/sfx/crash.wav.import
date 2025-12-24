@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/crash.wav-72a9cb92661afe7bcd4b467b231231c3.sample"
+type="AudioStreamWAV"
+uid="uid://5ir4agu7tcud"
+path="res://.godot/imported/crash.wav-72a9cb92661afe7bcd4b467b231231c3.sample"
 
 [deps]
 
 source_file="res://assets/sfx/crash.wav"
-dest_files=[ "res://.import/crash.wav-72a9cb92661afe7bcd4b467b231231c3.sample" ]
+dest_files=["res://.godot/imported/crash.wav-72a9cb92661afe7bcd4b467b231231c3.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=true
 edit/normalize=true
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

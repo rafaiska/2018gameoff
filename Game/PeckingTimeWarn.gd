@@ -1,9 +1,9 @@
 extends Node2D
 
-onready var main_scene = get_tree().current_scene
-onready var peckingtime_warn = get_node("PeckingTime")
-onready var press_warn = get_node("Press")
-onready var key_warn = get_node("Key")
+@onready var main_scene = get_tree().current_scene
+@onready var peckingtime_warn = get_node("PeckingTime")
+@onready var press_warn = get_node("Press")
+@onready var key_warn = get_node("Key")
 const time_to_peck = 4.0
 const time_to_warn = 2.0
 var elapsed_time = null
@@ -66,6 +66,6 @@ func _process(delta):
 
 func _input(event):
 	if elapsed_time != null and time_to_warn < elapsed_time and elapsed_time <= time_to_peck + time_to_warn:
-		if event is InputEventKey and event.scancode == key_map[chosen_key]:
+		if event is InputEventKey and event.keycode == key_map[chosen_key]:
 			main_scene.boost()
 			end()

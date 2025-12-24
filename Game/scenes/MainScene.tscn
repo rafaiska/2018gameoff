@@ -1,86 +1,47 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=10 format=3 uid="uid://y77bk1l6wmfc"]
 
-[ext_resource path="res://scenes/MainScene.gd" type="Script" id=1]
-[ext_resource path="res://scenes/Road.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/ProgressBar.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/PeckingTimeWarn.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/sfx/crash.wav" type="AudioStream" id=5]
-[ext_resource path="res://assets/sfx/boost.wav" type="AudioStream" id=6]
-[ext_resource path="res://assets/sfx/peckingtime.wav" type="AudioStream" id=7]
-[ext_resource path="res://assets/sfx/whistle.wav" type="AudioStream" id=8]
-[ext_resource path="res://assets/music/runningmusic.ogg" type="AudioStream" id=9]
+[ext_resource type="Script" uid="uid://e7xvosx00pc0" path="res://scenes/MainScene.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://tf5gb7kcj0qj" path="res://scenes/Road.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/ProgressBar.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://1j0x4ih1o7yh" path="res://scenes/PeckingTimeWarn.tscn" id="4"]
+[ext_resource type="AudioStream" uid="uid://5ir4agu7tcud" path="res://assets/sfx/crash.wav" id="5"]
+[ext_resource type="AudioStream" uid="uid://c4plqrpakmyex" path="res://assets/sfx/boost.wav" id="6"]
+[ext_resource type="AudioStream" uid="uid://dq47j4vclfgh1" path="res://assets/sfx/peckingtime.wav" id="7"]
+[ext_resource type="AudioStream" uid="uid://lyhunjyim7rr" path="res://assets/sfx/whistle.wav" id="8"]
+[ext_resource type="AudioStream" uid="uid://bjwcljgxtfuws" path="res://assets/music/runningmusic.ogg" id="9"]
 
-[node name="MainNode" type="Node2D" index="0"]
+[node name="MainNode" type="Node2D"]
+position = Vector2(510.829, 301.148)
+scale = Vector2(15.9422, 9.35453)
+script = ExtResource("1")
 
-position = Vector2( 510.829, 301.148 )
-scale = Vector2( 15.9422, 9.35453 )
-script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+[node name="Road" parent="." instance=ExtResource("2")]
+position = Vector2(3.8370488, -18.188835)
+scale = Vector2(0.15116045, 0.20421287)
 
-[node name="Road" parent="." index="0" instance=ExtResource( 2 )]
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-32.082, -31.9624)
+scale = Vector2(64.2905, 63.9624)
 
-position = Vector2( -0.122514, -19.2382 )
-scale = Vector2( 0.133597, 0.187109 )
-_sections_unfolded = [ "Transform" ]
+[node name="ProgressBar" parent="." instance=ExtResource("3")]
+position = Vector2(-27.7594, -24.6099)
+scale = Vector2(0.272572, 0.272572)
 
-[node name="Background" type="Sprite" parent="." index="1"]
+[node name="PeckingTimeWarn" parent="." instance=ExtResource("4")]
 
-position = Vector2( -32.082, -31.9624 )
-scale = Vector2( 64.2905, 63.9624 )
+[node name="CrashSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5")
 
-[node name="ProgressBar" parent="." index="2" instance=ExtResource( 3 )]
+[node name="BoostSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6")
 
-position = Vector2( -27.7594, -24.6099 )
-scale = Vector2( 0.272572, 0.272572 )
-_sections_unfolded = [ "Transform" ]
+[node name="PeckingTimeSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7")
 
-[node name="PeckingTimeWarn" parent="." index="3" instance=ExtResource( 4 )]
-
-[node name="CrashSFX" type="AudioStreamPlayer" parent="." index="4"]
-
-stream = ExtResource( 5 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
-
-[node name="BoostSFX" type="AudioStreamPlayer" parent="." index="5"]
-
-stream = ExtResource( 6 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
-
-[node name="PeckingTimeSFX" type="AudioStreamPlayer2D" parent="." index="6"]
-
-stream = ExtResource( 7 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
-
-[node name="Whistle" type="AudioStreamPlayer" parent="." index="7"]
-
-stream = ExtResource( 8 )
-volume_db = 0.0
-pitch_scale = 1.0
+[node name="Whistle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8")
 autoplay = true
-mix_target = 0
-bus = "Master"
 
-[node name="RunMusic" type="AudioStreamPlayer" parent="." index="8"]
-
-stream = ExtResource( 9 )
-volume_db = 0.0
-pitch_scale = 1.0
+[node name="RunMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9")
 autoplay = true
-mix_target = 0
-bus = "Master"
-
-

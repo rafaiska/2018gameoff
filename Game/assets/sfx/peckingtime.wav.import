@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/peckingtime.wav-51cd154a0f6e3ef045cc06ebc80585e7.sample"
+type="AudioStreamWAV"
+uid="uid://dq47j4vclfgh1"
+path="res://.godot/imported/peckingtime.wav-51cd154a0f6e3ef045cc06ebc80585e7.sample"
 
 [deps]
 
 source_file="res://assets/sfx/peckingtime.wav"
-dest_files=[ "res://.import/peckingtime.wav-51cd154a0f6e3ef045cc06ebc80585e7.sample" ]
+dest_files=["res://.godot/imported/peckingtime.wav-51cd154a0f6e3ef045cc06ebc80585e7.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=true
 edit/normalize=true
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0
