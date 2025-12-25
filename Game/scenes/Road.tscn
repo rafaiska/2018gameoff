@@ -25,30 +25,31 @@ animations = [{
 }]
 
 [node name="Road" type="Node2D"]
-position = Vector2(504.188, 277.317)
-scale = Vector2(1.17417, 1.18278)
 script = ExtResource("1")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(1.5053, 101.876)
-scale = Vector2(0.27507, 0.27507)
+position = Vector2(576, 324)
+scale = Vector2(0.6567845, 0.5225807)
 sprite_frames = SubResource("1")
 autoplay = "default"
 frame = 2
 
 [node name="ObstacleGen" type="Node2D" parent="."]
+position = Vector2(580, -80)
 
 [node name="GenSrc" type="Marker2D" parent="ObstacleGen"]
-position = Vector2(-1, -145.864)
 script = ExtResource("5")
 
 [node name="Chicken" parent="." instance=ExtResource("6")]
 z_index = 1
-position = Vector2(1.88742, 230.454)
+position = Vector2(567.5593, 609)
 scale = Vector2(2, 2)
 
 [node name="RoadLLimit" type="Marker2D" parent="."]
-position = Vector2(-166.221, 271.909)
+position = Vector2(169.55933, 648)
 
 [node name="RoadRLimit" type="Marker2D" parent="."]
-position = Vector2(164.026, 270.972)
+position = Vector2(953.5593, 648)
+
+[node name="Horizon" type="Node2D" parent="."]
+position = Vector2(592, 49)

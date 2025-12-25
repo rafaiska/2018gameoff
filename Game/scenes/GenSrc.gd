@@ -7,6 +7,7 @@ extends Node2D
 var spawn_angle
 const angle_correction = 0.2
 var obs_types = ['rock', 'haystack', 'stump']
+var horizon_y: float
 
 func _ready():
 	var src_to_l = road_limit_l.position - self.position
@@ -17,7 +18,8 @@ func _ready():
 
 func spawn(difficulty):
 	var new_rock = rock.instantiate()
-	new_rock.position = self.position + Vector2(10, 94)
+	new_rock.horizon_y = horizon_y
+	new_rock.global_position = self.global_position
 	randomize()
 	new_rock.angle = randf_range(0.0, spawn_angle)
 	new_rock.angle += (PI / 2.0) - (spawn_angle / 2.0)
@@ -27,7 +29,8 @@ func spawn(difficulty):
 
 func spawn_scen():
 	var new_scen = scen_item.instantiate()
-	new_scen.position = self.position
+	new_scen.horizon_y = horizon_y
+	new_scen.global_position = self.global_position
 	randomize()
 	new_scen.angle = randf_range(0.0, PI/6.0)
 	if randi() % 2 == 0:

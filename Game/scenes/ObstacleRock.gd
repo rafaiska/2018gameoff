@@ -3,6 +3,7 @@ extends Node2D
 var angle = 0.0
 var speed = 0.0
 var starting_y: float
+var horizon_y: float
 @onready var main_scene = get_tree().current_scene
 @onready var rigid_body = get_node("RigidBody2D")
 @onready var sprites = {
@@ -29,6 +30,8 @@ func _update_scale():
 	self.rigid_body.scale = Vector2(scale_mul * 2, scale_mul * 2)
 
 func _process(_delta):
+	if horizon_y != null:
+		visible = rigid_body.global_position.y >= horizon_y
 	if main_scene.chicken_speed != speed:
 		speed = main_scene.chicken_speed
 	_update_velocity(self.rigid_body.global_position.y)
@@ -40,9 +43,11 @@ func _process(_delta):
 func set_type(obstacle_type):
 	for shape in shapes:
 		if shape == obstacle_type:
-			shapes[shape].monitoring = false
-		else:
 			shapes[shape].monitoring = true
+			shapes[shape].visible = true
+		else:
+			shapes[shape].monitoring = false
+			shapes[shape].visible = false
 
 	for sprite in sprites:
 		if sprite == obstacle_type:

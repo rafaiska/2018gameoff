@@ -11,6 +11,7 @@ var time_since_last_spawn = 0.0
 var time_since_last_scen_spawn = 0.0
 
 func _ready():
+	gen_src.horizon_y = get_node("Horizon").global_position.y
 	chicken.chicken_limit_l = get_node("RoadLLimit").position.x
 	chicken.chicken_limit_r = get_node("RoadRLimit").position.x
 
